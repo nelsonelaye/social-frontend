@@ -26,7 +26,8 @@ const Container = styled.div`
   min-height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
-  background-color: lightgrey;
+  background-color: rgba(220, 220, 220, 0.3);
+
   padding-top: 70px;
 `;
 const Wrapper = styled.div`
@@ -34,8 +35,6 @@ const Wrapper = styled.div`
   padding-top: 50px;
   display: flex;
   justify-content: center;
-
-  background-color: silver;
 `;
 
 const MainScreen = styled.div`
@@ -49,7 +48,7 @@ const SideScreen = styled.div`
   width: 400px;
   display: flex;
   justify-content: flex-start;
-
+  // background-color: orange;
   @media screen and (max-width: 1000px) {
     display: none;
   }

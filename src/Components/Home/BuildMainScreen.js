@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BsBookmark, BsThreeDots } from "react-icons/bs";
+import { BsBookmark, BsThreeDots, BsFillBookmarkFill } from "react-icons/bs";
+import { AiFillHome, AiOutlineHeart } from "react-icons/ai";
 import { FiSend } from "react-icons/fi";
+import { FaRegComment, FaRegSmileWink } from "react-icons/fa";
 
 const BuildMainScreen = () => {
   return (
@@ -16,23 +17,60 @@ const BuildMainScreen = () => {
 
       <PostBuild>
         <Top>
-          <ProfileImage
-            src="/assets/black.jpg"
-            alt="A photo of a black woman"
-          />
-          <ProfileHold>
-            <ProfileName>My Name</ProfileName>
-            <Location>Lagos, Nigeria</Location>
-          </ProfileHold>
+          <Box>
+            <ProfileImage
+              src="/assets/black.jpg"
+              alt="A photo of a black woman"
+            />
+            <ProfileText>
+              <ProfileName>My Name</ProfileName>
+              <Location>Lagos, Nigeria</Location>
+            </ProfileText>
+          </Box>
+
+          <ThreeDots />
         </Top>
 
         <PostImage src="/assets/dream.png" alt="Vision Board" />
 
         <Icons>
-          <Like />
-          <Comment />
-          <Send />
+          <Box>
+            <Like />
+            <CommentIcon />
+            <Send />
+          </Box>
+          <SaveIcon />
         </Icons>
+
+        <LikePost>
+          <span>2, 034</span>likes{" "}
+        </LikePost>
+
+        <Post>
+          <span>My Name</span>
+          <Content>Let's dream big! </Content>
+        </Post>
+
+        <View>
+          View All <span>{1}</span> comments{" "}
+        </View>
+
+        <Comment>
+          <Box>
+            <span>Rodn3y</span>
+            <Content>Dream onmy friend, dream on... </Content>
+          </Box>
+
+          <LoveIconComment />
+        </Comment>
+
+        <Time>Posted 3Hours Ago</Time>
+
+        <PostInput>
+          <PostIcon />
+          <Input placeholder="Add a commment..." />
+          <Text>Post</Text>
+        </PostInput>
       </PostBuild>
     </Container>
   );
@@ -80,10 +118,19 @@ const PostBuild = styled.div`
   border-radius: 7px;
   margin: 10px 0;
 `;
+
 const Top = styled.div`
   padding: 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
+
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const ProfileImage = styled.img`
   width: 50px;
   height: 50px;
@@ -94,7 +141,7 @@ const ProfileImage = styled.img`
   margin-right: 10px;
 `;
 
-const ProfileHold = styled.div``;
+const ProfileText = styled.div``;
 
 const ProfileName = styled.div`
   font-weight: 700;
@@ -106,6 +153,11 @@ const Location = styled.div`
   font-size: 13px;
 `;
 
+const ThreeDots = styled(BsThreeDots)`
+  font-size: 25px;
+  color: black;
+`;
+
 const PostImage = styled.img`
   width: 100%;
   height: 500px;
@@ -114,21 +166,164 @@ const PostImage = styled.img`
 
 const Icons = styled.div`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0px 20px;
-  display; flex;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 const Like = styled(AiOutlineHeart)`
   font-size: 30px;
-  margin: 5px;
+  transition: all 350ms;
+  color: black;
+  margin-right: 20px;
+
+  :hover {
+    cursor: pointer;
+    color: silver;
+  }
 `;
-const Comment = styled(FiSend)`
+
+const CommentIcon = styled(FaRegComment)`
   font-size: 30px;
-  margin: 5px;
+  transition: all 350ms;
+  color: black;
+  margin-right: 20px;
+
+  :hover {
+    cursor: pointer;
+    color: silver;
+  }
 `;
+
 const Send = styled(FiSend)`
   font-size: 30px;
+  transition: all 350ms;
+  color: black;
+  margin-right: 20px;
+
+  :hover {
+    cursor: pointer;
+    color: silver;
+  }
+  font-size: 30px;
   margin: 5px;
 `;
-// const Bookmark = styled(BsBookmark)``;
+
+const SaveIcon = styled(BsBookmark)`
+  font-size: 30px;
+  transition: all 350ms;
+  color: black;
+
+  :hover {
+    cursor: pointer;
+    color: silver;
+  }
+`;
+
+const LikePost = styled.div`
+  margin-left: 20px;
+  margin-top: 13px;
+  font-size: 20px;
+  font-family: Poppins;
+  span {
+    font-weight: 700;
+    margin-right: 5px;
+  }
+`;
+
+const Post = styled.div`
+  margin: 0 20px;
+  display: flex;
+  font-size: 18px;
+  span {
+    margin-right: 5px;
+    font-weight: 500;
+    :hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+`;
+
+const View = styled.div`
+  color: lightgray;
+  margin: 20px;
+`;
+
+const Comment = styled.div`
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    margin-right: 5px;
+    font-weight: 700;
+
+    :hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+`;
+
+const Content = styled.div``;
+
+const LoveIconComment = styled(AiOutlineHeart)`
+  font-size: 25px;
+  transition: all 350ms;
+  color: gray;
+  margin-right: 20px;
+
+  :hover {
+    cursor: pointer;
+    color: silver;
+  }
+`;
+
+const Time = styled.div`
+  color: silver;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+const PostInput = styled.div`
+  display: flex;
+  padding: 20px 0;
+
+  border-top: 1px solid silver;
+`;
+
+const PostIcon = styled(FaRegSmileWink)`
+  margin: 0 10px;
+  font-size: 30px;
+`;
+
+const Input = styled.input`
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  flex: 1;
+  font-size: 18px;
+
+  ::placeholder {
+    font-family: Poppins;
+    font-size: 18px;
+  }
+`;
+
+const Text = styled.div`
+  font-weight: bold;
+  color: lightblue;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 12px;
+
+  :hover {
+    cursor: pointer;
+  }
+`;

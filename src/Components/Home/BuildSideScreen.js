@@ -9,7 +9,7 @@ const BuildSideScreen = () => {
           <Image src="/assets/black.jpg" />
           <Hold>
             <Name>Name</Name>
-            <Profile>Name</Profile>
+            <Profile>Just me</Profile>
           </Hold>
         </Holder>
 
@@ -26,20 +26,7 @@ const BuildSideScreen = () => {
               <Profile>Name</Profile>
             </Hold>
           </Holder>
-          <Holder>
-            <Image src="/assets/black.jpg" />
-            <Hold>
-              <Name>Name</Name>
-              <Profile>Name</Profile>
-            </Hold>
-          </Holder>
-          <Holder>
-            <Image src="/assets/black.jpg" />
-            <Hold>
-              <Name>Name</Name>
-              <Profile>Name</Profile>
-            </Hold>
-          </Holder>
+          <Content>Follow</Content>
         </Text>
       </Wrapper>
     </Container>
@@ -49,14 +36,17 @@ const BuildSideScreen = () => {
 export default BuildSideScreen;
 
 const Container = styled.div`
-  width: 100%;
   position: fixed;
+  // background-color: purple;
+  width: 400px;
 `;
 const Wrapper = styled.div`
   margin-left: 30px;
 `;
 const Holder = styled.div`
   display: flex;
+  align-items: center;
+  font-size: 15px;
 `;
 const Image = styled.img`
   width: 50px;
@@ -67,12 +57,31 @@ const Image = styled.img`
 `;
 
 const Hold = styled.div``;
-const Name = styled.div``;
+const Name = styled.div`
+  font-weight: 700;
+`;
 const Profile = styled.div``;
 const Text = styled.div`
-  display: flex;
   width: 100%;
+  display: flex;
   justify-content: space-between;
+  // background-color: red;
+  margin: 15px 0;
 `;
-const Suggest = styled.div``;
-const Action = styled.div``;
+const Suggest = styled.div`
+  font-weight: 600;
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+`;
+const Action = styled.div`
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+`;
+
+const Content = styled.div`
+  cursor: pointer;
+  color: #69bff8;
+`;

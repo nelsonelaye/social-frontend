@@ -7,7 +7,10 @@ const Header = () => {
     <Container>
       <Wrapper>
         <Hold>
-          <Logo>Social Build</Logo>
+          <Logo>
+            <img src="/assets/social.png" />
+            Insta Clone
+          </Logo>
           <SearchBar>
             <Icon />
             <SearchInput placeholder="Search" />
@@ -17,7 +20,7 @@ const Header = () => {
           <Home />
           <Send />
           <Love />
-          <Image src="/logo192.png" />
+          <Image src="/assets/black.jpg" />
         </Hold>
       </Wrapper>
     </Container>
@@ -50,13 +53,21 @@ const Logo = styled.div`
   font-size: 25px;
   font-style: italic;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
 `;
 const SearchBar = styled.div`
   display: flex;
   align-items: center;
   width: 350px;
   border: 1px solid silver;
-  border-radius: 5px;
+  border-radius: 3px;
+  background-color: rgba(220, 220, 220, 0.3);
 `;
 
 const Icon = styled(BiSearch)`
@@ -66,27 +77,26 @@ const SearchInput = styled.input`
   outline: none;
   font-size: 20px;
   border: 0;
-  background-color: red;
-
+  background-color: transparent;
   ::placeholder {
     font-family: Poppins;
   }
 `;
 const Home = styled(AiFillHome)`
-  font-size: 25px;
-  margin: 0px 5px;
+  font-size: 28px;
+  margin: 0px 8px;
 `;
 const Send = styled(BiAddToQueue)`
-  margin: 0px 5px;
-  font-size: 25px;
+  margin: 0px 8px;
+  font-size: 28px;
 `;
 const Love = styled(AiOutlineHeart)`
-  margin: 0px 5px;
-  font-size: 25px;
+  margin: 0px 8px;
+  font-size: 28px;
 `;
 const Image = styled.img`
-width: 25px;
-height: 25px;
-border: radius: 100%;
-background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 8px;
 `;
