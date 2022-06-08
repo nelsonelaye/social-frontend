@@ -13,15 +13,12 @@ const DisplayCard = ({ setDisplay }) => {
     >
       <Wrapper>
         <Top>
-          <ProfileImage
-            src="/assets/black.jpg"
-            alt="A photo of a black woman"
-          />
+          <ProfileImage src="/assets/elon.jpeg" alt="A photo of Elon Musk" />
           <ProfileText>
-            <ProfileName>Username</ProfileName>
-            <RealName>Real Name</RealName>
+            <ProfileName>Space_Elon</ProfileName>
+            <RealName>Elon Musk</RealName>
             <Follow>
-              Followed by, <span>Another name</span>
+              Followed by, <span>nelsonelaye</span>
             </Follow>
           </ProfileText>
         </Top>
@@ -41,7 +38,11 @@ const DisplayCard = ({ setDisplay }) => {
           </CountHold>
         </Middle>
 
-        <Bottom></Bottom>
+        <Bottom>
+          <Image src="/assets/quote.jpg" />
+          <Image src="/assets/img1.jpeg" />
+          <Image src="/assets/peter.jpg" />
+        </Bottom>
         <Button></Button>
       </Wrapper>
     </Container>
@@ -121,5 +122,24 @@ font-weight: 500;
 border-radius: 3px;
 background-color: blue;
 color: white;
+border-radius: 3px;
+	transition: all 350ms;
+	:hover {
+		cursor: pointer;
+		background-color: rgba(16, 143, 233, 0.8);
+	}
 `;
-const Bottom = styled.div``;
+const Bottom = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const Image = styled.img`
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  :hover {
+    opacity: 0.9;
+  }
+`;

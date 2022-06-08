@@ -21,7 +21,7 @@ const BuildSideScreen = () => {
 
         <Text>
           <Holder>
-            <Image src="/assets/black.jpg" />
+            <Image src="/assets/elon.jpeg" />
             <Hold>
               <RealName
                 onMouseEnter={() => {
@@ -31,9 +31,9 @@ const BuildSideScreen = () => {
                   setDisplay(false);
                 }}
               >
-                RealName
+                Space_Elon
               </RealName>
-              <Profile>Name</Profile>
+              <Profile>Elon Musk</Profile>
               {display ? (
                 <DIv>
                   <DisplayCard setDisplay={setDisplay} />
