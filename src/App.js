@@ -7,6 +7,7 @@ import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 import New from "./Components/Auth/NewPassword";
 import Reset from "./Components/Auth/ResetPassword";
+import ConfirmEmail from "./Components/Auth/email";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/newpassword" element={<New />} />
+        <Route path="/email" element={<ConfirmEmail />} />
       </Routes>
     </BrowserRouter>
   );
